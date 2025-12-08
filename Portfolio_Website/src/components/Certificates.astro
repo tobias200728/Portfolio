@@ -1,0 +1,136 @@
+---
+// src/components/Certificates.astro
+---
+
+<section id="certificates">
+  <div class="section-container">
+    <h2>Zertifikate & Erfolge</h2>
+    <div class="certificates-grid">
+      <div class="certificate-card">
+        <div class="badge-container">
+          <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="195461ed-9f05-4f07-911d-e4bac66eb308" data-share-badge-host="https://www.credly.com"></div>
+        </div>
+        <div class="certificate-content">
+          <h3>Introduction to Cybersecurity</h3>
+          <p class="certificate-issuer">Cisco Networking Academy</p>
+          <p class="certificate-description">
+            Grundlagen der Cybersicherheit: Bedrohungslandschaft, Sicherheitsprinzipien, Schutz von Daten und Netzwerken. Verständnis für aktuelle Cyber-Bedrohungen und Best Practices zur Absicherung digitaler Systeme.
+          </p>
+          <div class="certificate-date">Cisco Zertifikat</div>
+        </div>
+      </div>
+
+      <div class="certificate-card">
+        <div class="badge-container">
+          <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="4903d274-a7fc-4a50-9d9e-3cc835d24a72" data-share-badge-host="https://www.credly.com"></div>
+        </div>
+        <div class="certificate-content">
+          <h3>Introduction to IoT</h3>
+          <p class="certificate-issuer">Cisco Networking Academy</p>
+          <p class="certificate-description">
+            Einführung in das Internet der Dinge (IoT): Verständnis vernetzter Geräte, Sensoren, Datenerfassung und IoT-Architekturen. Grundlagen der digitalen Transformation und Industrie 4.0.
+          </p>
+          <div class="certificate-date">Cisco Zertifikat</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
+<style>
+  section {
+    padding: 6rem 0;
+  }
+
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+  }
+
+  .certificate-card {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+    display: flex;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .certificate-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+  }
+
+  .badge-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    flex-shrink: 0;
+  }
+
+  .certificate-content {
+    flex: 1;
+  }
+
+  .certificate-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+  }
+
+  .certificate-issuer {
+    color: var(--accent);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .certificate-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .certificate-date {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .certificates-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .certificate-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .badge-container {
+      margin: 0 auto;
+    }
+  }
+</style>

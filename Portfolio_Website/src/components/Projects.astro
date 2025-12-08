@@ -1,0 +1,228 @@
+---
+// src/components/Projects.astro
+
+const projects = [
+  {
+    title: "Portfolio",
+    description: "Portfolio Website Tobias Hirzenberger",
+    image: "🌐",
+    tags: ["Astro", "JavaScript", "HTML/CSS"],
+    githubUrl: "https://github.com/tobias200728/Portfolio",
+    liveUrl: undefined,
+  },
+  {
+    title: "MCserver_ubuntu",
+    description: "Ubuntu Server Konfiguration für Minecraft-Server",
+    image: "⚙️",
+    tags: ["Shell", "Ubuntu"],
+    githubUrl: "https://github.com/tobias200728/MCserver_ubuntu",
+    liveUrl: undefined,
+  },
+  {
+    title: "MinecraftTestMod-1.21",
+    description: "Minecraft Mod entwickelt für Version 1.21 mit neuen Features",
+    image: "⛏️",
+    tags: ["Java", "Minecraft"],
+    githubUrl: "https://github.com/tobias200728/MinecraftTestMod-1.21",
+    liveUrl: undefined,
+  },
+  {
+    title: "Zahlenraten JS",
+    description: "AZURE ZAHLENRATEN",
+    image: "🎲",
+    tags: ["JavaScript", "Azure"],
+    githubUrl: "https://github.com/tobias200728/Zahlenraten_JS",
+    liveUrl: undefined,
+  },
+  {
+    title: "Graphen Java",
+    description: "Java-Anwendung zur Visualisierung von Graphen",
+    image: "📊",
+    tags: ["Java"],
+    githubUrl: "https://github.com/tobias200728/Graphen_java",
+    liveUrl: undefined,
+  },
+  {
+    title: "pythontest",
+    description: "Python Testprojekt zum Erproben verschiedener Konzepte",
+    image: "🐍",
+    tags: ["Python"],
+    githubUrl: "https://github.com/tobias200728/pythontest",
+    liveUrl: undefined,
+  },
+];
+---
+
+<section id="projects">
+  <div class="section-container">
+    <h2>Featured Projects</h2>
+    <p class="section-subtitle">
+      Hier finden Sie eine Übersicht meiner abgeschlossenen und laufenden Projekte. 
+      Jedes Projekt zeigt meine Fähigkeiten und meine Entwicklung als Developer.
+    </p>
+    <div class="projects-grid">
+      {projects.map((project) => (
+        <div class="project-card">
+          <div class="project-image">{project.image}</div>
+          <div class="project-content">
+            <h3>{project.title}</h3>
+            <p class="project-description">{project.description}</p>
+            <div class="project-tags">
+              {project.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+            <div class="project-links">
+              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              {project.liveUrl && (
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="project-link live">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    padding: 6rem 0;
+  }
+
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-card {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+  }
+
+  .project-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+  }
+
+  .project-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  .project-description {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tag {
+    padding: 0.25rem 0.75rem;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+  }
+
+  .project-link {
+    padding: 0.6rem 1.2rem;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .project-link:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .project-link.live {
+    background: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+  }
+
+  .project-link.live:hover {
+    background: #8b5cf6;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-links {
+      flex-direction: column;
+    }
+  }
+</style>

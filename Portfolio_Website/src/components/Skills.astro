@@ -1,0 +1,131 @@
+---
+// src/components/Skills.astro
+---
+
+<section id="skills">
+  <div class="section-container">
+    <h2>Tech Stack</h2>
+    <div class="skills-grid">
+    <div class="skill-card">
+      <i class="fab fa-js skill-icon" style="color: #F7DF1E;"></i>
+      <span class="skill-name">JavaScript</span>
+    </div>
+    <div class="skill-card">
+      <i class="fab fa-js skill-icon" style="color: #3178C6;"></i>
+      <span class="skill-name">TypeScript</span>
+    </div>
+    <div class="skill-card">
+      <i class="fab fa-html5 skill-icon" style="color: #E34F26;"></i>
+      <span class="skill-name">HTML/CSS</span>
+    </div>
+    <div class="skill-card">
+      <i class="fab fa-react skill-icon" style="color: #61DAFB;"></i>
+      <span class="skill-name">React</span>
+    </div>
+    <div class="skill-card">
+      <i class="fab fa-angular skill-icon" style="color: #DD0031;"></i>
+      <span class="skill-name">Angular</span>
+    </div>
+    <div class="skill-card">
+      <i class="fab fa-node-js skill-icon" style="color: #339933;"></i>
+      <span class="skill-name">Node.js</span>
+    </div>
+    <div class="skill-card">
+      <i class="fab fa-python skill-icon" style="color: #3776AB;"></i>
+      <span class="skill-name">Python</span>
+    </div>
+    <div class="skill-card">
+      <i class="fab fa-java skill-icon" style="color: #007396;"></i>
+      <span class="skill-name">Java</span>
+    </div>
+    <div class="skill-card">
+      <i class="fab fa-git-alt skill-icon" style="color: #F05032;"></i>
+      <span class="skill-name">Git</span>
+    </div>
+    <div class="skill-card">
+      <i class="fas fa-rocket skill-icon" style="color: #FF5D01;"></i>
+      <span class="skill-name">Astro</span>
+    </div>
+    <div class="skill-card">
+      <i class="fas fa-wind skill-icon" style="color: #06B6D4;"></i>
+      <span class="skill-name">Tailwind</span>
+    </div>
+    <div class="skill-card">
+      <i class="fab fa-figma skill-icon" style="color: #F24E1E;"></i>
+      <span class="skill-name">Figma</span>
+    </div>
+    <div class="skill-card">
+      <i class="fas fa-database skill-icon" style="color: #336791;"></i>
+      <span class="skill-name">PostgreSQL</span>
+    </div>
+    <div class="skill-card">
+      <i class="fas fa-database skill-icon" style="color: #4479A1;"></i>
+      <span class="skill-name">MySQL</span>
+    </div>
+    <div class="skill-card">
+      <i class="fas fa-leaf skill-icon" style="color: #47A248;"></i>
+      <span class="skill-name">MongoDB</span>
+    </div>
+    <div class="skill-card">
+      <i class="fas fa-server skill-icon" style="color: #68A063;"></i>
+      <span class="skill-name">Express</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<style>
+  section {
+    padding: 6rem 0;
+  }
+
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .skill-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .skill-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+  }
+
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+
+  .skill-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+  }
+</style>

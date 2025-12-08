@@ -1,0 +1,243 @@
+---
+// src/components/Journey.astro
+---
+
+<section id="journey">
+  <div class="section-container">
+    <h2>Meine Reise</h2>
+    <div class="journey-grid">
+      <div class="journey-item">
+        <div class="journey-logo">
+          <img src="https://www.st.johann.at/System/web/GetImage.ashx?fileid=1032233&mode=T&width=640&height=360&cropping=CENTER&cts=1490199283" alt="Volksschule am Dom Logo" />
+        </div>
+        <div class="journey-content">
+          <div class="journey-header">
+            <div class="journey-title">
+              <h3>Volksschule am Dom</h3>
+              <p class="journey-role">Schüler</p>
+            </div>
+            <span class="journey-date">2015 - 2019</span>
+          </div>
+          <ul>
+            
+            <li>Erste schulische Erfolge</li>
+            <li>Entwicklung von Lernbegeisterung</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="journey-item">
+        <div class="journey-logo">
+          <img src="https://yt3.googleusercontent.com/ytc/AIdro_kY1qJzpVlsF259dq0yn-YsggbZ0OyP3Vxh-EriS-fiLQ=s160-c-k-c0x00ffffff-no-rj" alt="BORG St. Johann Logo" />
+        </div>
+        <div class="journey-content">
+          <div class="journey-header">
+            <div class="journey-title">
+              <h3>BORG St. Johann im Pongau</h3>
+              <p class="journey-role">Schüler</p>
+            </div>
+            <span class="journey-date">2019 - 2023</span>
+          </div>
+          <ul>
+            <li>Allgemeinbildung und akademische Grundlagen</li>
+            <li>Entwicklung analytischer Fähigkeiten</li>
+            <li>Vorbereitung auf technische Ausbildung</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="journey-item">
+        <div class="journey-logo">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV7JMuvyQDTsZ26KrUjhrapjSKqK9HoRdc4w&s" alt="Salzburg AG Logo" />
+        </div>
+        <div class="journey-content">
+          <div class="journey-header">
+            <div class="journey-title">
+              <h3>Salzburg AG</h3>
+              <p class="journey-role">Praktikant</p>
+            </div>
+            <span class="journey-date">2023</span>
+          </div>
+          <ul>
+            <li>Erstes Praktikum in einem technischen Umfeld</li>
+            <li>Kennenlernen verschiedener Abteilungen</li>
+            <li>Erste praktische Berufserfahrung</li>
+            <li>Anwendung schulischer Kenntnisse in der Praxis</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="journey-item">
+        <div class="journey-logo">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV7JMuvyQDTsZ26KrUjhrapjSKqK9HoRdc4w&s" alt="Salzburg AG Logo" />
+        </div>
+        <div class="journey-content">
+          <div class="journey-header">
+            <div class="journey-title">
+              <h3>Salzburg AG</h3>
+              <p class="journey-role">Praktikant</p>
+            </div>
+            <span class="journey-date">2024</span>
+          </div>
+          <ul>
+            <li>Praktische Erfahrung in einem großen Unternehmen</li>
+            <li>Einblick in professionelle Arbeitsabläufe</li>
+            <li>Mitarbeit an realen Projekten</li>
+            <li>Networking mit Fachleuten aus der Branche</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="journey-item">
+        <div class="journey-logo">
+          <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFBJnFvtDYJpQ/company-logo_200_200/company-logo_200_200/0/1733348917529?e=2147483647&v=beta&t=6QMe1kB2oVhs3I5GH75SyExnV7VbrHfBRrsm2ZySS1o" alt="HTL Saalfelden Logo" />
+        </div>
+        <div class="journey-content">
+          <div class="journey-header">
+            <div class="journey-title">
+              <h3>HTL Saalfelden</h3>
+              <p class="journey-role">Schüler</p>
+            </div>
+            <span class="journey-date">Aktuell</span>
+          </div>
+          <ul>
+            <li>Technische Ausbildung in moderner Informatik und Elektronik</li>
+            <li>Praktische Erfahrung durch verschiedene Schulprojekte</li>
+            <li>Vertiefung in Programmierung und Softwareentwicklung</li>
+            <li>Teamarbeit und Projektmanagement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    padding: 6rem 0;
+  }
+
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .journey-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .journey-item {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+    display: flex;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .journey-logo {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+  }
+
+  .journey-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Spezielle Anpassung für Volksschule Logo */
+  .journey-item:first-child .journey-logo img {
+    object-fit: cover;
+    transform: scale(0.6);
+  }
+
+  .journey-content {
+    flex: 1;
+  }
+
+  .journey-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+  }
+
+  .journey-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+  }
+
+  .journey-title h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .journey-role {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+
+  .journey-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .journey-item ul {
+    list-style: none;
+    margin-top: 1rem;
+  }
+
+  .journey-item li {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    color: var(--text-secondary);
+  }
+
+  .journey-item li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .journey-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .journey-logo {
+      margin-bottom: 1rem;
+    }
+
+    .journey-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .journey-date {
+      margin-top: 0.5rem;
+    }
+  }
+</style>

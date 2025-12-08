@@ -1,0 +1,158 @@
+---
+// src/pages/index.astro
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Journey from '../components/Journey.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Certificates from '../components/Certificates.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tobias Hirzenberger | HTL Saalfelden</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #111111;
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0a0;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f5f5f5;
+      --text-primary: #0a0a0a;
+      --text-secondary: #666666;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.3s ease, color 0.3s ease;
+      padding: 0 4rem;
+    }
+
+    /* Container für alle Sections */
+    section {
+      padding: 6rem 0;
+    }
+
+    /* Entfernt die globalen Section-Styles, da sie jetzt in den Components sind */
+
+    @media (max-width: 1024px) {
+      body {
+        padding: 0 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <Navigation />
+  <Hero />
+  <Journey />
+  <Skills />
+  <Projects />
+  <Certificates />
+  <Contact />
+  <Footer />
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const themeIcon = themeToggle?.querySelector('i');
+
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', currentTheme);
+    
+    if (themeIcon) {
+      if (currentTheme === 'light') {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      }
+    }
+
+    themeToggle?.addEventListener('click', () => {
+      const theme = html.getAttribute('data-theme');
+      const newTheme = theme === 'dark' ? 'light' : 'dark';
+      
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      if (themeIcon) {
+        if (newTheme === 'light') {
+          themeIcon.classList.remove('fa-moon');
+          themeIcon.classList.add('fa-sun');
+        } else {
+          themeIcon.classList.remove('fa-sun');
+          themeIcon.classList.add('fa-moon');
+        }
+      }
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const href = anchor.getAttribute('href');
+        if (href) {
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const target = entry.target;
+          if (target instanceof HTMLElement) {
+            target.style.opacity = '1';
+            target.style.transform = 'translateY(0)';
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach((section) => {
+      if (section instanceof HTMLElement) {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(section);
+      }
+    });
+  </script>
+</body>
+</html>
