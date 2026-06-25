@@ -6,7 +6,7 @@
   <div class="nav-content">
     <a href="#" class="logo">TH</a>
     <div class="nav-right">
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="#journey">Journey</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -15,6 +15,11 @@
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <i class="fas fa-moon"></i>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </div>
@@ -98,10 +103,73 @@
     transform: rotate(180deg);
   }
 
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
   @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+
     .nav-links {
-      gap: 1rem;
-      font-size: 0.85rem;
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(10, 10, 10, 0.97);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 0;
+    }
+
+    :global([data-theme="light"]) .nav-links {
+      background: rgba(100, 149, 237, 0.98);
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    .nav-links li {
+      width: 100%;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 0.9rem 2rem;
+      font-size: 1rem;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .nav-right {
@@ -109,3 +177,21 @@
     }
   }
 </style>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger?.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks?.classList.toggle('open');
+  });
+
+  // Menü schließen wenn ein Link geklickt wird
+  navLinks?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      hamburger?.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+</script>
